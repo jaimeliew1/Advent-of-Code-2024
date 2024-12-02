@@ -12,7 +12,7 @@ SAVEDIR = Path(__file__).parent.parent.parent / "inputs"
 SAVEDIR.mkdir(exist_ok=True, parents=True)
 
 
-if __name__ == "__main__":
+def fetch():
     for day in range(1, 26):
         fn = SAVEDIR / f"day{day:02}.txt"
 
@@ -31,3 +31,7 @@ if __name__ == "__main__":
         print(f"saving to {fn}.")
         with open(fn, "w") as f:
             f.write(data)
+
+
+if __name__ == "__main__":
+    fetch()
