@@ -24,10 +24,10 @@ def parse(fn: str) -> list[list[Page]]:
 def solve(manuals: list[list[Page]]) -> tuple[int, int]:
     ans1, ans2 = 0, 0
     for manual in manuals:
-        if all(manual[i] < manual[i + 1] for i in range(len(manual) - 1)):
+        if (sorted_manual := sorted(manual)) == manual:
             ans1 += manual[len(manual) // 2].page
         else:
-            ans2 += sorted(manual)[len(manual) // 2].page
+            ans2 += sorted_manual[len(manual) // 2].page
     return ans1, ans2
 
 
