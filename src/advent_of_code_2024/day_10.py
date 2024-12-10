@@ -10,7 +10,7 @@ def parse(fn: str) -> dict[complex, int]:
 
 
 def solve(map: dict[complex, int]) -> tuple[int, int]:
-    def DFS(start: complex) -> dict[complex, int]:
+    def DFS(start: complex) -> Counter:
         out = Counter()
         for dir in [1, 1j, -1, -1j]:
             match map.get(start + dir):
